@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mountain Valley Wrestling Club - Freestyle Wrestling for Youth</title>
+    <title>Mountain Freestyle Wrestling Club - Freestyle Wrestling for Youth</title>
     <style>
         * {
             margin: 0;
@@ -62,6 +62,116 @@
         }
         
         .nav-links a:hover {
+            color: #ccc;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 4px;
+            z-index: 101;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Mobile menu overlay */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background: #000;
+            padding: 20px;
+            transition: right 0.3s ease;
+            z-index: 100;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 40px;
+        }
+
+        .close-button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .close-button:hover {
+            color: #ccc;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mobile-menu li {
+            margin: 20px 0;
+        }
+
+        .mobile-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
             color: #ccc;
         }
         
@@ -404,6 +514,10 @@
                 display: none;
             }
             
+            .hamburger {
+                display: flex;
+            }
+            
             .hero-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -432,7 +546,7 @@
 <body>
     <header>
         <nav class="container">
-            <a href="#" class="logo">Mountain Freestyle Wrestling</a>
+            <a href="#home" class="logo">Mountain Freestyle Wrestling</a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -440,8 +554,29 @@
                 <li><a href="#schedule">Schedule</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="hamburger" onclick="toggleMobileMenu()">
+                <span></span>
+                <span>
+                </span>
+                <span></span>
+            </div>
         </nav>
     </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" onclick="closeMobileMenu()"></div>
+    <nav class="mobile-menu">
+        <div class="mobile-menu-header">
+            <button class="close-button" onclick="closeMobileMenu()">&times;</button>
+        </div>
+        <ul>
+            <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+            <li><a href="#programs" onclick="closeMobileMenu()">Programs</a></li>
+            <li><a href="#schedule" onclick="closeMobileMenu()">Schedule</a></li>
+            <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+        </ul>
+    </nav>
 
     <section id="home" class="hero">
         <div class="container">
@@ -480,7 +615,7 @@
                         </div>
                         <div class="slide">
                             <img src="class4.jpeg" alt="Expert Coaching">
-                            <!-- <div class="slide-caption">Professional instruction for all skill levels</div> -->
+                            <!-- <div class="slide-caption">Professional and instruction for all skill levels</div> -->
                         </div>
                     </div>
                     
@@ -630,7 +765,7 @@
                             <strong>Address:</strong><br>
                             [Your Wrestling Facility]<br>
                             [Street Address]<br>
-                            [City, State ZIP]
+                            [Burbank, CA 91502]
                         </div>
                     </div>
                     <div class="contact-item">
@@ -688,6 +823,49 @@
                 header.style.background = '#000';
             } else {
                 header.style.background = '#000';
+            }
+        });
+
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+            const hamburger = document.querySelector('.hamburger');
+            
+            mobileMenu.classList.toggle('active');
+            mobileMenuOverlay.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+            const hamburger = document.querySelector('.hamburger');
+            
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
+                closeMobileMenu();
+            }
+        });
+
+        // Prevent menu from closing when clicking inside
+        document.querySelector('.mobile-menu').addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+
+        // Close menu on window resize if screen becomes larger
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
             }
         });
 
