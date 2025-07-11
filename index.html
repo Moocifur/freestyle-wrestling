@@ -1042,7 +1042,9 @@
                         </div>
                         
                         <h3>Send Us a Message</h3>
-                        <form id="contactForm">
+                        <form id="contactForm" action="https://formspree.io/f/xpwrgvyq" method="POST">
+                            <input type="hidden" name="source" value="Mountain Freestyle Wrestling Website">
+                            
                             <div class="form-group">
                                 <label for="name">Name *</label>
                                 <input type="text" id="name" name="name" required>
@@ -1183,52 +1185,14 @@
 
         // Contact form functionality
         document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = {};
-            for (let [key, value] of formData.entries()) {
-                data[key] = value;
-            }
-            
-            // Simulate form submission (replace with actual form handling)
-            console.log('Form submitted:', data);
-            
-            // Show success message
-            const successMessage = document.getElementById('successMessage');
-            successMessage.classList.add('show');
-            
-            // Reset form
-            this.reset();
-            
-            // Hide success message after 5 seconds
+            // Let the form submit naturally to Formspree
+            // Show success message after a brief delay
             setTimeout(() => {
-                successMessage.classList.remove('show');
-            }, 5000);
-            
-            // In a real implementation, you would send the data to your server
-            // Example with fetch API:
-            /*
-            fetch('/submit-contact-form', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(result => {
-                if (result.success) {
-                    successMessage.classList.add('show');
-                    this.reset();
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('There was an error sending your message. Please try again.');
-            });
-            */
+                document.getElementById('successMessage').classList.add('show');
+                setTimeout(() => {
+                    document.getElementById('successMessage').classList.remove('show');
+                }, 5000);
+            }, 1000);
         });
 
         // Form validation enhancement
