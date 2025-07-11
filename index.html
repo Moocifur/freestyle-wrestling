@@ -391,6 +391,24 @@
         /* About Section */
         .about-content {
             margin-top: 3rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            padding: 4rem 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-content::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 0, 0, 0.02), transparent);
+            transform: rotate(45deg);
+            pointer-events: none;
         }
         
         .about-text {
@@ -399,6 +417,13 @@
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            padding: 0 1rem;
         }
         
         /* Programs Section */
@@ -410,44 +435,94 @@
         }
         
         .program-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
             border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.03), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .program-card:hover::before {
+            left: 100%;
         }
         
         .program-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
             border-color: #000;
         }
         
         .program-card h3 {
             color: #000;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            position: relative;
+            z-index: 1;
         }
         
         .program-card .age-group {
-            background: #000;
+            background: linear-gradient(135deg, #000 0%, #333 100%);
             color: white;
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
+            padding: 0.4rem 1.2rem;
+            border-radius: 25px;
             font-size: 0.9rem;
             font-weight: bold;
             display: inline-block;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .program-card p {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 1.5rem;
+        }
+        
+        .program-card ul {
+            position: relative;
+            z-index: 1;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .program-card li {
+            padding: 0.4rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .program-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #000;
+            font-weight: bold;
         }
         
         /* Schedule Section */
         .schedule-table {
-            background: white;
-            border-radius: 15px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
             margin-top: 3rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
         
         .schedule-table table {
@@ -456,47 +531,212 @@
         }
         
         .schedule-table th {
-            background: #000;
+            background: linear-gradient(135deg, #000 0%, #333 100%);
             color: white;
-            padding: 1rem;
+            padding: 1.2rem;
             text-align: left;
             font-weight: bold;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         .schedule-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #eee;
+            padding: 1.2rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: background-color 0.3s ease;
         }
         
         .schedule-table tr:hover {
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .schedule-table tr:nth-child(even) {
+            background: rgba(0, 0, 0, 0.02);
+        }
+        
+        .schedule-table tr:nth-child(even):hover {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .schedule-table td:first-child {
+            font-weight: bold;
+            color: #000;
         }
         
         /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+        
         .contact-info {
-            background: #000;
+            background: linear-gradient(135deg, #000 0%, #333 100%);
             color: white;
             padding: 3rem;
-            border-radius: 15px;
-            margin-top: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            border-radius: 20px;
+            height: fit-content;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transform: rotate(45deg);
+            pointer-events: none;
         }
         
         .contact-info h3 {
             margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 1;
         }
         
         .contact-item {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
             display: flex;
             align-items: center;
             gap: 1rem;
+            position: relative;
+            z-index: 1;
+            padding: 0.5rem;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.1);
         }
         
         .contact-item .icon {
             font-size: 1.5rem;
+            min-width: 30px;
+        }
+        
+        .contact-item a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-item a:hover {
+            color: #ccc;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #000, #333, #000);
+        }
+        
+        .contact-form h3 {
+            margin-bottom: 1.5rem;
+            color: #000;
+            font-size: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background: white;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #000;
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .submit-btn {
+            background: #000;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        
+        /* Success Message */
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #c3e6cb;
+            display: none;
+        }
+        
+        .success-message.show {
+            display: block;
         }
         
         /* Footer */
@@ -540,6 +780,15 @@
             .programs-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -556,8 +805,7 @@
             </ul>
             <div class="hamburger" onclick="toggleMobileMenu()">
                 <span></span>
-                <span>
-                </span>
+                <span></span>
                 <span></span>
             </div>
         </nav>
@@ -603,19 +851,15 @@
                     <div class="slideshow-container">
                         <div class="slide active">
                             <img src="class.jpeg" alt="Wrestling Training">
-                            <!-- <div class="slide-caption">Students learning fundamental wrestling techniques</div> -->
                         </div>
                         <div class="slide">
                             <img src="class2.jpeg" alt="Youth Wrestling">
-                            <!-- <div class="slide-caption">Our youth program builds confidence and skills</div> -->
                         </div>
                         <div class="slide">
                             <img src="class3.jpeg" alt="Wrestling Competition">
-                            <!-- <div class="slide-caption">Athletes competing at local tournaments</div> -->
                         </div>
                         <div class="slide">
                             <img src="class4.jpeg" alt="Expert Coaching">
-                            <!-- <div class="slide-caption">Professional and instruction for all skill levels</div> -->
                         </div>
                     </div>
                     
@@ -757,37 +1001,71 @@
         <section id="contact" class="section">
             <div class="container">
                 <h2>Get In Touch</h2>
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="contact-item">
-                        <span class="icon">📍</span>
-                        <div>
-                            <strong>Address:</strong><br>
-                            [Your Wrestling Facility]<br>
-                            [Street Address]<br>
-                            [Burbank, CA 91502]
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <div class="contact-item">
+                            <span class="icon">📍</span>
+                            <div>
+                                <strong>Address:</strong><br>
+                                [Your Wrestling Facility]<br>
+                                [Street Address]<br>
+                                [Burbank, CA 91502]
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">📞</span>
+                            <div>
+                                <strong>Phone:</strong><br>
+                                (555) 123-4567
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">✉️</span>
+                            <div>
+                                <strong>Email:</strong><br>
+                                info@mountainvalleywrestling.com
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">📷</span>
+                            <div>
+                                <strong>Instagram:</strong><br>
+                                <a href="https://www.instagram.com/mountainfreestylewrestling">@mountainfreestylewrestling</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <span class="icon">📞</span>
-                        <div>
-                            <strong>Phone:</strong><br>
-                            (555) 123-4567
+                    
+                    <div class="contact-form">
+                        <div class="success-message" id="successMessage">
+                            <strong>Message sent successfully!</strong> We'll get back to you within 24 hours.
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <span class="icon">✉️</span>
-                        <div>
-                            <strong>Email:</strong><br>
-                            info@mountainvalleywrestling.com
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <span class="icon">📷</span>
-                        <div>
-                            <strong>Instagram:</strong><br>
-                            <a href="https://www.instagram.com/mountainfreestylewrestling">Check us out on Instagram</a>
-                        </div>
+                        
+                        <h3>Send Us a Message</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" required placeholder="Tell us how we can help you..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -902,6 +1180,102 @@
         setInterval(() => {
             changeSlide(1);
         }, 5000);
+
+        // Contact form functionality
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = {};
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+            
+            // Simulate form submission (replace with actual form handling)
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.add('show');
+            
+            // Reset form
+            this.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+            
+            // In a real implementation, you would send the data to your server
+            // Example with fetch API:
+            /*
+            fetch('/submit-contact-form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.success) {
+                    successMessage.classList.add('show');
+                    this.reset();
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error sending your message. Please try again.');
+            });
+            */
+        });
+
+        // Form validation enhancement
+        const requiredFields = document.querySelectorAll('input[required], textarea[required]');
+        
+        requiredFields.forEach(field => {
+            field.addEventListener('blur', function() {
+                if (this.value.trim() === '') {
+                    this.style.borderColor = '#dc3545';
+                } else {
+                    this.style.borderColor = '#28a745';
+                }
+            });
+            
+            field.addEventListener('input', function() {
+                if (this.value.trim() !== '') {
+                    this.style.borderColor = '#28a745';
+                }
+            });
+        });
+
+        // Email validation
+        const emailField = document.getElementById('email');
+        emailField.addEventListener('blur', function() {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (this.value && !emailRegex.test(this.value)) {
+                this.style.borderColor = '#dc3545';
+            } else if (this.value) {
+                this.style.borderColor = '#28a745';
+            }
+        });
+
+        // Phone number formatting
+        const phoneField = document.getElementById('phone');
+        phoneField.addEventListener('input', function() {
+            // Remove all non-numeric characters
+            let value = this.value.replace(/\D/g, '');
+            
+            // Format as (XXX) XXX-XXXX
+            if (value.length >= 6) {
+                value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6, 10)}`;
+            } else if (value.length >= 3) {
+                value = `(${value.slice(0, 3)}) ${value.slice(3)}`;
+            }
+            
+            this.value = value;
+        });
     </script>
 </body>
 </html>
