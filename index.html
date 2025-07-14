@@ -563,6 +563,83 @@
             font-weight: bold;
             color: #000;
         }
+
+        /* Updated Schedule Section */
+.schedule-content {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.schedule-info {
+    max-width: 600px;
+    width: 100%;
+}
+
+.schedule-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.schedule-card h3 {
+    color: #000;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.schedule-card > p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    color: #555;
+}
+
+.schedule-notice {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.schedule-notice .icon {
+    font-size: 2rem;
+    min-width: 40px;
+}
+
+.schedule-notice h4 {
+    color: #000;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.schedule-notice p {
+    color: #666;
+    margin: 0;
+}
+
+.schedule-cta {
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .schedule-notice {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .schedule-card {
+        padding: 2rem;
+    }
+}
+        
         
         /* Contact Section */
         .contact-content {
@@ -831,18 +908,18 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Mountain Freestyle Wrestling</h1>
-                    <p>Developing young athletes through the discipline and technique of freestyle wrestling. Join our community of dedicated wrestlers and discover your potential.</p>
-                    
-                    <div class="hero-highlights">
-                        <h3>What We Offer</h3>
-                        <ul>
-                            <li>Expert coaching in freestyle wrestling</li>
-                            <li>Age-appropriate training programs</li>
-                            <li>Competition opportunities</li>
-                            <li>Character development focus</li>
-                            <li>Family-friendly environment</li>
-                        </ul>
-                    </div>
+                    <p>Learn from Olympic-level expertise. Our coach trained at a prestigious Olympic academy alongside world champions and European medalists, bringing authentic North Caucasus wrestling methodology directly to young athletes.</p>
+    
+    <div class="hero-highlights">
+        <h3>World-Class Training</h3>
+        <ul>
+            <li>Olympic-level coaching and methodology</li>
+            <li>North Caucasus Mountains wrestling tradition</li>
+            <li>Trained with Olympic champions & world medalists</li>
+            <li>Specialized techniques from legendary wrestling region</li>
+            <li>Elite-level development for youth athletes</li>
+        </ul>
+    </div>
                     
                     <a href="#contact" class="cta-button">Get In Touch</a>
                 </div>
@@ -883,11 +960,11 @@
                 <h2>About Our Club</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>Welcome to Mountain Freestyle Wrestling Club, where we're passionate about developing young athletes through the sport of freestyle wrestling. Our club provides quality coaching and training for kids and high school students, drawing from traditional Russian wrestling techniques and philosophy.</p>
-                        
-                        <p>We believe that wrestling builds more than just physical strength – it develops character, discipline, mental toughness, and lifelong friendships. Our experienced coaching staff brings a strong Russian wrestling influence, emphasizing technique, conditioning, and the mental aspects that have made Russian wrestlers dominant on the world stage.</p>
-                        
-                        <p>At our club, we emphasize proper technique, sportsmanship, and personal growth. We create a supportive environment where athletes can challenge themselves, learn from setbacks, and celebrate achievements together using time-tested training methods from one of wrestling's most successful traditions.</p>
+                        <p>Welcome to Mountain Freestyle Wrestling Club, where Olympic-level expertise meets passionate youth development. Our coaching comes directly from a prestigious Olympic-level wrestling academy, where we trained alongside Olympic champions, world medalists, and European champions.</p>
+
+                        <p>Our wrestling methodology originates from the legendary North Caucasus Mountains – a region renowned worldwide as producing the strongest freestyle wrestlers on the planet. This unique geographical and cultural wrestling heritage has shaped our specialized training approach that sets us completely apart from conventional programs.</p>
+
+                        <p>We bring this world-class, mountain-forged wrestling tradition to develop young athletes through our distinctive style and specialized training methodology. Beyond building physical strength and technique, we instill the character, discipline, and mental toughness that have made North Caucasus wrestlers legendary across the globe.</p>
                     </div>
                 </div>
             </div>
@@ -898,45 +975,37 @@
                 <h2>Our Programs</h2>
                 <div class="programs-grid">
                     <div class="program-card">
-                        <div class="age-group">Ages 6-10</div>
-                        <h3>Youth Beginners</h3>
-                        <p>Introduction to wrestling fundamentals with emphasis on fun, basic movements, and building confidence. Perfect for young athletes just starting their wrestling journey.</p>
+                        <div class="age-group">Ages 7+</div>
+                        <h3>Kids and Youth</h3>
+                        <p>Complete wrestling program for kids and young athletes starting from 7 years old. We focus on building fundamental skills, discipline, and confidence through freestyle wrestling techniques.</p>
                         <ul>
+                            <li>Fundamental wrestling techniques</li>
                             <li>Basic stance and movement</li>
-                            <li>Simple takedowns</li>
-                            <li>Mat awareness</li>
-                            <li>Games and activities</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="program-card">
-                        <div class="age-group">Ages 11-13</div>
-                        <h3>Middle School</h3>
-                        <p>Intermediate training focusing on technique refinement, conditioning, and introduction to competitive wrestling concepts.</p>
-                        <ul>
-                            <li>Advanced takedowns</li>
-                            <li>Escapes and reversals</li>
-                            <li>Conditioning drills</li>
+                            <li>Takedowns and escapes</li>
+                            <li>Character and discipline development</li>
+                            <li>Age-appropriate conditioning</li>
                             <li>Tournament preparation</li>
                         </ul>
                     </div>
                     
                     <div class="program-card">
-                        <div class="age-group">Ages 14-18</div>
-                        <h3>High School</h3>
-                        <p>Advanced training program designed for serious competitors looking to excel at the high school level and beyond.</p>
+                        <div class="age-group">High School</div>
+                        <h3>High School Practice</h3>
+                        <p>Intensive training program designed for high school wrestlers looking to compete at the highest level. Advanced techniques, conditioning, and mental preparation.</p>
                         <ul>
-                            <li>Advanced technique work</li>
+                            <li>Advanced freestyle wrestling techniques</li>
+                            <li>Competition-level training</li>
                             <li>Strength and conditioning</li>
-                            <li>Mental preparation</li>
-                            <li>College recruitment support</li>
+                            <li>Mental toughness development</li>
+                            <li>Tournament and match preparation</li>
+                            <li>Individual skill development</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="schedule" class="section">
+        <!-- <section id="schedule" class="section">
             <div class="container">
                 <h2>Practice Schedule</h2>
                 <div class="schedule-table">
@@ -996,7 +1065,32 @@
                     </table>
                 </div>
             </div>
-        </section>
+        </section> -->
+        <section id="schedule" class="section">
+    <div class="container">
+        <h2>Training Schedule</h2>
+        <div class="schedule-content">
+            <div class="schedule-info">
+                <div class="schedule-card">
+                    <h3>Current Practice Times</h3>
+                    <p>We offer training sessions for both our youth and high school programs. Practice times are designed to accommodate different age groups and skill levels.</p>
+                    
+                    <div class="schedule-notice">
+                        <span class="icon">📞</span>
+                        <div class="notice-content">
+                            <h4>Contact Us for Schedule Details</h4>
+                            <p>For current practice times and availability, please reach out to us directly. We'll provide you with all the information you need to get started.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-cta">
+                        <a href="#contact" class="cta-button">Get Schedule Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
         <section id="contact" class="section">
             <div class="container">
